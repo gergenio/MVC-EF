@@ -1,0 +1,26 @@
+﻿@model Prueba.Models.PersonaModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm("Crear","Persona", FormMethod.Post,new{enctype ="multipart/form-data"}))
+{
+    @Html.ValidationSummary(true)
+
+    <p>
+        @Html.LabelFor(model => model.Nombre):
+        @Html.EditorFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre)
+    </p>
+    <p>
+        @Html.LabelFor(model => model.Apellido):
+        @Html.EditorFor(model => model.Apellido)
+        @Html.ValidationMessageFor(model => model.Apellido)
+    </p>
+        <input type="submit"value="Create" />
+         @Html.ActionLink("Back to List","Index","Home")
+
+}
+<h2>Create</h2>
+
